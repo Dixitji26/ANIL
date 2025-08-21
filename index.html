@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIL | Applied Network Intelligence Lab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            position: relative;
+            background-color: #111827; /* Dark blue-gray background */
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        .content-overlay {
+            position: relative;
+            z-index: 1;
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- Header -->
+    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">
+                ANIL<span class="text-cyan-400">.</span>
+            </a>
+            <nav class="hidden md:flex space-x-8 text-gray-300">
+                <a href="#home" class="hover:text-cyan-400 transition-colors duration-300">Home</a>
+                <a href="#research" class="hover:text-cyan-400 transition-colors duration-300">Research</a>
+                <a href="#publications" class="hover:text-cyan-400 transition-colors duration-300">Publications</a>
+                <a href="#people" class="hover:text-cyan-400 transition-colors duration-300">People</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors duration-300">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#home" class="block py-2 px-6 text-sm hover:bg-gray-800">Home</a>
+            <a href="#research" class="block py-2 px-6 text-sm hover:bg-gray-800">Research</a>
+            <a href="#publications" class="block py-2 px-6 text-sm hover:bg-gray-800">Publications</a>
+            <a href="#people" class="block py-2 px-6 text-sm hover:bg-gray-800">People</a>
+            <a href="#contact" class="block py-2 px-6 text-sm hover:bg-gray-800">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-bg min-h-screen flex items-center">
+            <div id="particles-js"></div>
+            <div class="content-overlay container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4">
+                    Applied Network Intelligence Lab
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                    Pioneering the future of network science and artificial intelligence to solve complex, real-world challenges.
+                </p>
+                <a href="#research" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-full transition-transform duration-300 inline-block transform hover:scale-105">
+                    Explore Our Research
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Our Mission</h2>
+                    <div class="w-24 h-1 bg-cyan-500 mx-auto mt-4"></div>
+                </div>
+                <p class="text-center max-w-4xl mx-auto text-gray-300 text-lg">
+                    The Applied Network Intelligence Lab (ANIL) is dedicated to advancing the frontiers of network science by developing and applying state-of-the-art AI and machine learning algorithms. Our work focuses on understanding complex systems, modeling dynamic interactions, and creating intelligent solutions for impactful domains such as social networks, biological systems, and infrastructure resilience.
+                </p>
+            </div>
+        </section>
+
+        <!-- Research Areas Section -->
+        <section id="research" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Core Research Areas</h2>
+                    <div class="w-24 h-1 bg-cyan-500 mx-auto mt-4"></div>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Research Item 1 -->
+                    <div class="glassmorphism p-8 rounded-2xl text-center hover:border-cyan-400 transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="bg-cyan-500/10 text-cyan-400 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Graph Neural Networks</h3>
+                        <p class="text-gray-400">Developing novel GNN architectures for representation learning, link prediction, and node classification on large-scale graphs.</p>
+                    </div>
+                    <!-- Research Item 2 -->
+                    <div class="glassmorphism p-8 rounded-2xl text-center hover:border-cyan-400 transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="bg-cyan-500/10 text-cyan-400 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Temporal & Dynamic Networks</h3>
+                        <p class="text-gray-400">Modeling the evolution of networks over time to understand and predict dynamic processes and information diffusion.</p>
+                    </div>
+                    <!-- Research Item 3 -->
+                    <div class="glassmorphism p-8 rounded-2xl text-center hover:border-cyan-400 transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="bg-cyan-500/10 text-cyan-400 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Network Robustness & Security</h3>
+                        <p class="text-gray-400">Analyzing the vulnerability of networks to failures and attacks, and designing algorithms for more resilient systems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest News Section -->
+        <section id="publications" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Latest News & Updates</h2>
+                    <div class="w-24 h-1 bg-cyan-500 mx-auto mt-4"></div>
+                </div>
+                <!-- DYNAMIC CONTENT: UPDATE NEWS ITEMS HERE -->
+                <div class="space-y-8 max-w-4xl mx-auto">
+                    <!-- News Item 1 -->
+                    <div class="p-6 rounded-lg border border-gray-700 hover:border-cyan-500 transition-colors duration-300">
+                        <p class="text-sm text-gray-400 mb-1">August 2025</p>
+                        <h3 class="text-lg font-semibold text-white">Paper accepted at NeurIPS 2025!</h3>
+                        <p class="text-gray-300">Our work on "Self-Supervised Learning for Dynamic Graph Embeddings" has been accepted at the 39th Conference on Neural Information Processing Systems.</p>
+                    </div>
+                    <!-- News Item 2 -->
+                    <div class="p-6 rounded-lg border border-gray-700 hover:border-cyan-500 transition-colors duration-300">
+                        <p class="text-sm text-gray-400 mb-1">July 2025</p>
+                        <h3 class="text-lg font-semibold text-white">Welcome to our new PhD students!</h3>
+                        <p class="text-gray-300">ANIL is excited to welcome three new doctoral candidates to the team for the upcoming academic year.</p>
+                    </div>
+                    <!-- News Item 3 -->
+                    <div class="p-6 rounded-lg border border-gray-700 hover:border-cyan-500 transition-colors duration-300">
+                        <p class="text-sm text-gray-400 mb-1">June 2025</p>
+                        <h3 class="text-lg font-semibold text-white">Dr. [Professor's Name] gives keynote at NetSci Conference.</h3>
+                        <p class="text-gray-300">Our lab director delivered a keynote on the challenges and opportunities in AI for complex networks.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-800 border-t border-gray-700">
+        <div class="container mx-auto px-6 py-10">
+            <div class="text-center">
+                <h3 class="text-2xl font-bold text-white mb-2">Join Us</h3>
+                <p class="text-gray-400 mb-6 max-w-2xl mx-auto">We are always looking for passionate and talented students to join our lab. If you are interested in network science and AI, please get in touch.</p>
+                <a href="mailto:contact@anil-lab.edu" class="bg-gray-700 hover:bg-cyan-500 hover:text-white text-cyan-400 font-bold py-3 px-6 rounded-lg transition-colors duration-300">
+                    contact@anil-lab.edu
+                </a>
+            </div>
+            <div class="mt-10 pt-8 border-t border-gray-700 text-center text-gray-500">
+                <p>&copy; 2025 Applied Network Intelligence Lab (ANIL). All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Particle.js for background animation -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Particles.js configuration
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#06b6d4" // cyan-500
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#2dd4bf", // teal-400
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
