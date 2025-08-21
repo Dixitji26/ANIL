@@ -14,7 +14,10 @@
         }
         .hero-bg {
             position: relative;
-            background-color: #111827; /* Dark blue-gray background */
+            /* A subtle blue gradient */
+            background: #0F2027;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         }
         #particles-js {
             position: absolute;
@@ -34,6 +37,11 @@
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+        /* Style for the typing cursor */
+        .typed-cursor {
+            color: #67e8f9; /* cyan-300 */
+            font-weight: 300;
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-200">
@@ -41,8 +49,10 @@
     <!-- Header -->
     <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-white">
-                ANIL<span class="text-cyan-400">.</span>
+            <!-- LOGO AND TEXT SIDE-BY-SIDE -->
+            <a href="#" class="flex items-center space-x-3">
+                <img src="http://googleusercontent.com/file_content/1" alt="ANIL Lab Logo" class="h-12 w-auto">
+                <span class="text-lg font-semibold text-white hidden sm:block">Applied Network Intelligence Lab</span>
             </a>
             <nav class="hidden md:flex space-x-8 text-gray-300">
                 <a href="#home" class="hover:text-cyan-400 transition-colors duration-300">Home</a>
@@ -71,8 +81,8 @@
         <section id="home" class="hero-bg min-h-screen flex items-center">
             <div id="particles-js"></div>
             <div class="content-overlay container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4">
-                    Applied Network Intelligence Lab
+                <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4 h-24 md:h-32">
+                    <span id="typing-effect"></span>
                 </h1>
                 <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
                     Pioneering the future of network science and artificial intelligence to solve complex, real-world challenges.
@@ -153,16 +163,9 @@
                         <h3 class="text-lg font-semibold text-white">Welcome to our new PhD students!</h3>
                         <p class="text-gray-300">ANIL is excited to welcome three new doctoral candidates to the team for the upcoming academic year.</p>
                     </div>
-                    <!-- News Item 3 -->
-                    <div class="p-6 rounded-lg border border-gray-700 hover:border-cyan-500 transition-colors duration-300">
-                        <p class="text-sm text-gray-400 mb-1">June 2025</p>
-                        <h3 class="text-lg font-semibold text-white">Dr. [Professor's Name] gives keynote at NetSci Conference.</h3>
-                        <p class="text-gray-300">Our lab director delivered a keynote on the challenges and opportunities in AI for complex networks.</p>
-                    </div>
                 </div>
             </div>
         </section>
-
     </main>
 
     <!-- Footer -->
@@ -171,8 +174,8 @@
             <div class="text-center">
                 <h3 class="text-2xl font-bold text-white mb-2">Join Us</h3>
                 <p class="text-gray-400 mb-6 max-w-2xl mx-auto">We are always looking for passionate and talented students to join our lab. If you are interested in network science and AI, please get in touch.</p>
-                <a href="mailto:contact@anil-lab.edu" class="bg-gray-700 hover:bg-cyan-500 hover:text-white text-cyan-400 font-bold py-3 px-6 rounded-lg transition-colors duration-300">
-                    contact@anil-lab.edu
+                <a href="mailto:sidharth@iitj.ac.in" class="bg-gray-700 hover:bg-cyan-500 hover:text-white text-cyan-400 font-bold py-3 px-6 rounded-lg transition-colors duration-300">
+                    sidharth@iitj.ac.in
                 </a>
             </div>
             <div class="mt-10 pt-8 border-t border-gray-700 text-center text-gray-500">
@@ -181,8 +184,10 @@
         </div>
     </footer>
 
-    <!-- Particle.js for background animation -->
+    <!-- JS Libraries -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
     <script>
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -191,81 +196,40 @@
             mobileMenu.classList.toggle('hidden');
         });
 
+        // Typing effect initialization
+        document.addEventListener('DOMContentLoaded', function () {
+            var options = {
+                strings: ['Applied Network Intelligence Lab'],
+                typeSpeed: 50,
+                backSpeed: 25,
+                backDelay: 2000,
+                startDelay: 500,
+                loop: false,
+                showCursor: true,
+                cursorChar: '_',
+                // This function hides the cursor once typing is complete
+                onComplete: function(self) {
+                    self.cursor.style.display = 'none';
+                }
+            };
+            var typed = new Typed('#typing-effect', options);
+        });
+
         // Particles.js configuration
         particlesJS('particles-js', {
             "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#06b6d4" // cyan-500
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                    }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                    }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#2dd4bf", // teal-400
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 2,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                }
+                "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#06b6d4" }, // cyan-500
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.4, "random": true },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#2dd4bf", "opacity": 0.3, "width": 1 },
+                "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false, "out_mode": "out" }
             },
             "interactivity": {
                 "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "grab"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                }
+                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": false }, "resize": true },
+                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.7 } } }
             },
             "retina_detect": true
         });
